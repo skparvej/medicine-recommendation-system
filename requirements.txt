@@ -1,10 +1,10 @@
 services:
   - type: web
-    name: flask-ml-app
+    name: my-flask-app
     runtime: python
     buildCommand: ""
     startCommand: gunicorn main:app
     envVars:
-      - key: PORT
-        value: 10000  # or let Render assign this automatically
+      - key: FLASK_ENV
+        value: production
     plan: free
