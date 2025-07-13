@@ -1,5 +1,10 @@
-Flask>=2.0.0
-gunicorn
-numpy
-pandas
-scikit-learn==1.6.1
+services:
+  - type: web
+    name: my-flask-app # You can rename this to anything
+    runtime: python
+    buildCommand: ""
+    startCommand: gunicorn main:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+    plan: free
