@@ -1,5 +1,10 @@
-Flask
-numpy
-pandas
-scikit-learn
-gunicorn
+services:
+  - type: web
+    name: flask-ml-app
+    runtime: python
+    buildCommand: ""
+    startCommand: gunicorn main:app
+    envVars:
+      - key: PORT
+        value: 10000  # or let Render assign this automatically
+    plan: free
